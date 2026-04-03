@@ -1,1 +1,112 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+header {   
+    position: relative;
+    width: 100%;
+    height: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+body {  
+    background-image: url("images/ralf1403-hike-9718263.jpg");
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    position: relative;
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    
+}
+
+header img {
+    width: 250px;
+    max-width: 80%;
+    margin-top: 10px;
+}
+
+nav {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;    
+}   
+
+    nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+header-text {
+    margin-top: 10px;  
+    color: black;
+    text-align: center;
+    max-width: 500px;
+    font-size: 14px;
+}
+
+main {  
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+form {
+    background: rgba(red, green, blue, alpha);  
+    padding: 25px;
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 260px;
+}
+
+input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    cursor: pointer;
+    padding: 8px;
+}
+
+form a {
+    font-size: 12px;
+    text-align: center;
+}
+
+/* Webpage 2 */
+
+.header-link {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
 
