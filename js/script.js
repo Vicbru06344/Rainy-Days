@@ -10,6 +10,9 @@ async function hentData () {
             const short = document.createElement("div");
             short.classList.add("productshort");
 
+            const lenke = document.createElement("a");
+            lenke.href = `product/index.html?id=${product.id}`;
+
             const picture = document.createElement("img");
             picture.src = product.image.url;
             picture.alt = product.image.alt;
@@ -20,9 +23,10 @@ async function hentData () {
             const price = document.createElement("p");
             price.textContent = `${product.price} dollar`;
 
-            short.appendChild(picture);
-            short.appendChild(title);
-            short.appendChild(price);
+            lenke.appendChild(picture);
+            lenke.appendChild(title);
+            lenke.appendChild(price);
+            short.appendChild(lenke)
             productContainer .appendChild(short);
         });
 
@@ -32,3 +36,5 @@ async function hentData () {
     }
     hentData();
 
+const params = new URLSearchParams(window.location.search);
+const productId = params.get("id");

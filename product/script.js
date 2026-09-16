@@ -1,0 +1,34 @@
+const params = new URLSearchParams(window.location.search);
+const productId = params.get("id");
+
+async function getOneproduct() {
+    try {
+    const response = await fetch(`https://v2.api.noroff.dev/rainy-days/${productId}`);
+    const data = await response.json();
+    const product = data.data;
+
+    document.querySelector("#producttitle").textContent = product.title;
+    document.querySelector("#productpicture") .src = product.image.url;
+    document.querySelector("#productprice").textContent = `price: ${product.price} dollar`;
+    document.querySelector("#productdescription") .textContent= product.description;
+} catch (error) {
+    console.error("something went wrong", error);
+}
+}
+
+getOneproduct();
+document.querySelector("#addToCartBtn") .addEventListener("click", () => {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const item = {
+        id: product.id,
+        title: product.title,
+        price: product.price,
+        image: product.image.url,
+    };   
+
+    cart.push(item);
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    alert("The product has been added to the shopping cart!");
+});
