@@ -17,7 +17,7 @@ function showProducts(productlist) {
     const productContainer = document.querySelector("#productlist");
     productContainer.innerHTML = "";
     
-    productlist.forEach((product) => {
+    productlist.forEach((product) => {   //foreach gjør noe med hver element
         
             const short = document.createElement("div");
             short.classList.add("productshort");
@@ -45,3 +45,16 @@ function showProducts(productlist) {
 
 hentData();
 
+document.querySelector("#filterAll").addEventListener("click", () => {
+    showProducts(allProducts);
+});
+
+document.querySelector("#filterWoman").addEventListener("click", () => {
+    const filtered = allProducts.filter((product) => product.gender === "Female");
+    showProducts(filtered);
+});
+
+document.querySelector("#filterMen").addEventListener("click", () => {
+    const filtered = allProducts.filter((product) => product.gender === "Male");
+    showProducts(filtered);
+});
