@@ -36,5 +36,3 @@ async function hentData () {
     }
     hentData();
 
-const params = new URLSearchParams(window.location.search);
-const productId = params.get("id");

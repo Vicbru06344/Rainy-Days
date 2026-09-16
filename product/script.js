@@ -7,17 +7,15 @@ async function getOneproduct() {
     const data = await response.json();
     const product = data.data;
 
+    
+
     document.querySelector("#producttitle").textContent = product.title;
     document.querySelector("#productpicture") .src = product.image.url;
     document.querySelector("#productprice").textContent = `price: ${product.price} dollar`;
     document.querySelector("#productdescription") .textContent= product.description;
-} catch (error) {
-    console.error("something went wrong", error);
-}
-}
 
-getOneproduct();
-document.querySelector("#addToCartBtn") .addEventListener("click", () => {
+
+    document.querySelector("#addToCartBtn") .addEventListener("click", () => {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
     const item = {
@@ -31,4 +29,10 @@ document.querySelector("#addToCartBtn") .addEventListener("click", () => {
     localStorage.setItem("cart", JSON.stringify(cart));
 
     alert("The product has been added to the shopping cart!");
-});
+   });
+    } catch (error) {
+        console.error("something went wrong", error);
+    }
+}
+
+getOneproduct();
