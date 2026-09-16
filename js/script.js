@@ -1,4 +1,4 @@
-console.log("Hei, JavaScript er koblet til");
+
 let allProducts = [];
 
 async function hentData () {

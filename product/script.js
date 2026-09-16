@@ -3,7 +3,7 @@ const productId = params.get("id");
 
 async function getOneproduct() {
     try {
-    document.querySelector("#productlist").innerHTML = "<p>Loading...</p>";
+    document.querySelector("#producttitle").textContent = "Loading...";
     const response = await fetch(`https://v2.api.noroff.dev/rainy-days/${productId}`);
     const data = await response.json();
     const product = data.data;
