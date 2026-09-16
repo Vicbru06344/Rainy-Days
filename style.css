@@ -546,3 +546,13 @@ form a {
     object-fit: cover;
     border-radius: 4px;
 }
+
+.legal-content {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.legal-content h2 {
+    margin-top: 30px;
+}

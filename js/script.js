@@ -1,12 +1,24 @@
 console.log("Hei, JavaScript er koblet til");
+let allProducts = [];
 
 async function hentData () {
     try {
         const response = await fetch("https://v2.api.noroff.dev/rainy-days");
         const data = await response.json();
-        const productContainer = document.querySelector("#productlist");
+       allProducts = data.data;
 
-        data.data. forEach((product) => {
+
+        showProducts(allProducts);
+    } catch (error) {
+        console.error("something went wrong", error);
+    }
+}
+function showProducts(productlist) {
+    const productContainer = document.querySelector("#productlist");
+    productContainer.innerHTML = "";
+    
+    productlist.forEach((product) => {
+        
             const short = document.createElement("div");
             short.classList.add("productshort");
 
@@ -29,10 +41,7 @@ async function hentData () {
             short.appendChild(lenke)
             productContainer .appendChild(short);
         });
-
-        } catch (error) {
-            console.error ("Noe gikk galt", error);
-        }
     }
-    hentData();
+
+hentData();
 
