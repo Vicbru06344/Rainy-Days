@@ -41,3 +41,7 @@ function renderCart() {
     }
     
     renderCart();
+    document.querySelector("#checkoutBtn").addEventListener("click", () => {
+        window.location.href = "checkout/index.html";
+    });
+    
