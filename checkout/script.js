@@ -1,4 +1,5 @@
 function renderCheckout() {
+    document.querySelector("#checkoutItems").innerHTML = "<p>Loading your order...</p>";
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     const checkoutItemsContainer = document.querySelector("#checkoutItems");
     const checkoutTotal = document.querySelector("#checkoutTotal");

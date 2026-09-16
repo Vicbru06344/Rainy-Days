@@ -3,6 +3,7 @@ let allProducts = [];
 
 async function hentData () {
     try {
+        document.querySelector("#productlist").innerHTML = "<p>Loading products...</p>";
         const response = await fetch("https://v2.api.noroff.dev/rainy-days");
         const data = await response.json();
        allProducts = data.data;
@@ -11,6 +12,7 @@ async function hentData () {
         showProducts(allProducts);
     } catch (error) {
         console.error("something went wrong", error);
+        document.querySelector("#productlist").innerHTML = "<p>Something went wrong while loading products. Please try again later.</p>";
     }
 }
 function showProducts(productlist) {

@@ -1,5 +1,6 @@
 async function getMensProducts() {
   try {
+    document.querySelector("#productlist").innerHTML = "<p>Loading products...</p>";
     const response = await fetch("https://v2.api.noroff.dev/rainy-days");
     const data = await response.json();
 
@@ -32,6 +33,7 @@ async function getMensProducts() {
     });
   } catch (error) {
     console.error("Something went wrong", error);
+    document.querySelector("#productlist").innerHTML = "<p>Something went wrong while loading products. Please try again later.</p>";
   }
 }
 

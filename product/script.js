@@ -3,6 +3,7 @@ const productId = params.get("id");
 
 async function getOneproduct() {
     try {
+    document.querySelector("#productlist").innerHTML = "<p>Loading...</p>";
     const response = await fetch(`https://v2.api.noroff.dev/rainy-days/${productId}`);
     const data = await response.json();
     const product = data.data;
@@ -31,6 +32,7 @@ async function getOneproduct() {
     alert("The product has been added to the shopping cart!");
    });
     } catch (error) {
+        document.querySelector("#producttitle").textContent = "Something went wrong. Please try again later.";
         console.error("something went wrong", error);
     }
 }
