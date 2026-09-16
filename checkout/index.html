@@ -17,11 +17,7 @@
          <div class="checkout-page"> 
             <h2>your order</h2>
 
-            <div class="order">
-                <img src="../images/RainyDays_Jacket4.jpg" class="order-img">
-            </div>
-            <p>BLACK AND WHITE OUTDOOR JACKET</p>   
-            <p>98,99,-$</p>
+            <div id="checkoutItems"></div>
         </div>
 
         <div class="checkout-container">    
@@ -42,7 +38,7 @@
                 </div>
      
             <div class="right">
-                <h3>$ 98,99,-</h3>
+                <h3 id="checkoutTotal">$ 0</h3>
 
                 <label>Card name</label>  
                 <input type="text"> 
@@ -55,12 +51,13 @@
                     <input type="text" placeholder="CVC">
                 </div>  
 
-                <button>Place order</button>    
+                <button id="placeOrderBtn">Place order</button>    
              </div>
              </div>
              </section>
              </main>
              <a href="payment.html" class="header-link">Go to next page</a>
+             <script src="script.js"></script>
              </body>
              </html>
 
